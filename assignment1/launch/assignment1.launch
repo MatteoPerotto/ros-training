@@ -1,0 +1,8 @@
+<launch>
+	<include file="$(find robot_description)/launch/sim_assignment.launch" />
+	<node name="gtp_service" pkg="robot_description" type="gtp_service.py" />
+	<node name="simulation" pkg="turtlesim" type="turtlesim_node" />
+	<node name="position_server" pkg="assignment1" type="random_position_server" />
+	<node name="control_caller" pkg="assignment1" type="control_caller_node" />
+	<node name="turtlebot_controller" pkg="assignment1" type="turtlebot_controller" output="screen" />
+</launch>
